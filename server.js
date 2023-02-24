@@ -20,9 +20,8 @@ app.use((req,res,next) =>{
 // routes
 app.use('/api/workouts', WorkOutRoutes)
 
-//Connect to db
+//Connect to db and listening to port
 mongoose.set("strictQuery", false);
-
 mongoose.connect(process.env.MONGO_URI)
 .then(() =>{
     // Listening for request
