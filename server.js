@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const WorkOutRoutes = require('./routes/workouts');
+const UserRoutes = require('./routes/user')
 //const Port = process.env.Port || 3500
 
 
@@ -19,6 +20,8 @@ app.use((req,res,next) =>{
 
 // routes
 app.use('/api/workouts', WorkOutRoutes)
+
+app.use('/api/user', UserRoutes);
 
 //Connect to db and listening to port
 mongoose.set("strictQuery", false);
